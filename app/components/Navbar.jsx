@@ -13,7 +13,6 @@ const Nav = styled.nav`
   left: 0;
   right: 0;
   z-index: 100;
-  backdrop-filter: blur(64px); /* Adjust the blur value as needed */
 `;
 
 const Logo = styled.img`
