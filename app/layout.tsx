@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={poppins.className + " min-h-screen grid grid-rows-[auto,minmax(0,1fr)]"}>
         <Navbar />
         {children}
       </body>
