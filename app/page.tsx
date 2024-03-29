@@ -58,5 +58,10 @@
 // export default App;
 
 export default function Home() {
-  return <div></div>;
+  return (
+    <div className="h-full grid grid-cols-[minmax(0,1fr),35vw]">
+      <div></div>
+      <div className="bg-sky-500 h-full"></div>
+    </div>
+  );
 }
