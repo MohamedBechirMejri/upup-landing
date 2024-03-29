@@ -46,7 +46,7 @@ export default function TitleAndShit() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
+        transition={{ delay: 1.2, duration: 0.7 }}
         className="text-xl font-normal mt-12 -ml-24 flex flex-col items-start gap-8"
       >
         <p className="[text-transform:none]">
