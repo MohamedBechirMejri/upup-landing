@@ -43,13 +43,20 @@ export default function TitleAndShit() {
           Away
         </motion.span>
       </p>
-      <div className="text-xl font-normal mt-8 -ml-32 ">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1 }}
+        className="text-xl font-normal mt-8 -ml-32 flex flex-col items-start gap-8"
+      >
         <p className="[text-transform:none]">
           The most powerful file uploader for your react project
         </p>
 
-        <button className="">Try it now!</button>
-      </div>
+        <button className="bg-gradient-to-br from-sky-500 via-blue-500 to-blue-700 text-white p-3 px-8 rounded">
+          Try it now!
+        </button>
+      </motion.div>
     </div>
   );
 }
