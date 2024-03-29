@@ -4,12 +4,16 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 const Nav = styled.nav`
-  background: #ffffff; /* Adjust the background color as needed */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  backdrop-filter: blur(64px); /* Adjust the blur value as needed */
 `;
 
 const Logo = styled.img`
