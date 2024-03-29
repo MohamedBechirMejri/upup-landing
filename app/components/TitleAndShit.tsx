@@ -10,7 +10,7 @@ export default function TitleAndShit() {
           initial={{ x: "2rem", y: "10rem", opacity: 0 }}
           animate={{ x: "2rem", y: "0rem", opacity: 1 }}
           transition={{ duration: 1.8, delay: 0, ease: "anticipate" }}
-          className="block"
+          className='block font-extrabold text-transparent bg-clip-text bg-left-top [background-image: url("/text-background-a2ce454e.png");] bg-gradient-to-tl from-sky-500 via-blue-500 to-blue-950'
         >
           Upup
         </motion.span>
@@ -22,7 +22,7 @@ export default function TitleAndShit() {
           transition={{
             duration: 1.8,
             delay: 0.2,
-            ease: "anticipate", 
+            ease: "anticipate",
           }}
           className="block"
         >
@@ -43,6 +43,13 @@ export default function TitleAndShit() {
           Away
         </motion.span>
       </p>
+      <div className="text-xl font-normal mt-8 -ml-32 ">
+        <p className="[text-transform:none]">
+          The most powerful file uploader for your react project
+        </p>
+
+        <button className="">Try it now!</button>
+      </div>
     </div>
   );
 }
