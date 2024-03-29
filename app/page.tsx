@@ -1,4 +1,3 @@
-import Image from "next/image";
 import RocketSVG from "./components/RocketSVG";
 
 export default function Home() {
