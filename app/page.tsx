@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext } from 'react';
+import React, { createContext } from "react";
 import styled, { css } from "styled-components";
 import Footer from "./components/Footer";
 import Intro from "./components/Intro";
@@ -44,14 +44,14 @@ const PriceShape = styled.div`
 `;
 
 const App = () => {
-  const smallScreen = window.screen.width <= 480 ? true : false;
+  const smallScreen = false;
   return (
     <>
       <Container>
         <Intro />
         <IntoShape />
       </Container>
-        <Footer />
+      <Footer />
     </>
   );
 };
