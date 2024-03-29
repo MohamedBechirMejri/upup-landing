@@ -1,10 +1,18 @@
 import Particles from "./components/Particles";
 import RocketSVG from "./components/RocketSVG";
+import TitleAndShit from "./components/TitleAndShit";
 
 export default function Home() {
   return (
     <div className="h-full grid grid-cols-[minmax(0,1fr),50vw] overflow-hidden">
-      <div></div>
+      {/* <div className="flex flex-col items-center justify-center">
+        <h1>Upup and Away</h1>
+        <p>The most powerful file uploader for your react projects</p>
+        <button>Try it now</button>
+      </div> */}
+
+      <TitleAndShit />
+
       <div className="overflow-hidden relative bg-gradient-to-tr from-sky-500 via-blue-700 to-blue-950 ">
         <div
           className="size-0 "
@@ -12,7 +20,7 @@ export default function Home() {
             borderLeft: "20rem solid transparent",
             borderRight: "0 solid transparent",
             borderBottom: "100vh solid white",
-            transform: 'rotateX(180deg) rotateY(180deg)',
+            transform: "rotateX(180deg) rotateY(180deg)",
           }}
         ></div>
 
