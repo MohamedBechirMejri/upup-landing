@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.particle {
+  position: absolute;
+  background-color: white;
+  opacity: 0.8;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh); /* Move the particles from top to bottom */
+  }
+}
