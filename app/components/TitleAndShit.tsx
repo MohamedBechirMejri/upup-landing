@@ -47,10 +47,10 @@ export default function TitleAndShit() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
-        className="text-xl font-normal mt-8 -ml-32 flex flex-col items-start gap-8"
+        className="text-xl font-normal mt-12 -ml-24 flex flex-col items-start gap-8"
       >
         <p className="[text-transform:none]">
-          The most powerful file uploader for your react project
+          The most powerful open source file uploader for your react project
         </p>
 
         <button className="bg-gradient-to-br from-sky-500 via-blue-500 to-blue-700 text-white p-3 px-8 rounded">

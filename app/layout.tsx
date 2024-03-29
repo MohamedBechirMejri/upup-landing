@@ -20,6 +20,16 @@ export default function RootLayout({
       <body className={poppins.className + " min-h-screen relative"}>
         <Navbar />
         {children}
+
+        <footer className="fixed bottom-0 right-0 p-4 text-white">
+          <a
+            href="https://devino.ca"
+            target="_blank"
+            className="hover:underline"
+          >
+            Devino Technologies Inc
+          </a>
+        </footer>
       </body>
     </html>
   );
