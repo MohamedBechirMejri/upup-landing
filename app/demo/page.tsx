@@ -154,9 +154,6 @@ const SidebarTitle = styled.h2`
 type ServiceKeys =
   | 'GoogleDrive'
   | 'Dropbox'
-  | 'Instagram'
-  | 'Facebook'
-  | 'Url'
   | 'OneDrive'
   | 'Unsplash'
   | 'Box';
@@ -171,9 +168,6 @@ const Page: React.FC = () => {
   const [services, setServices] = useState<ServicesState>({
     GoogleDrive: false,
     Dropbox: false,
-    Instagram: false,
-    Facebook: false,
-    Url: false,
     OneDrive: false,
     Unsplash: false,
     Box: false,
@@ -220,9 +214,6 @@ const Page: React.FC = () => {
 const serviceToAdapterMap: { [K in ServiceKeys]: UploadAdapter } = {
   GoogleDrive: UploadAdapter.GOOGLE_DRIVE,
   Dropbox: UploadAdapter.DROPBOX,
-  Instagram: UploadAdapter.INSTAGRAM,
-  Facebook: UploadAdapter.FACEBOOK,
-  Url: UploadAdapter.URL,
   OneDrive: UploadAdapter.ONE_DRIVE,
   Unsplash: UploadAdapter.UNSPLASH,
   Box: UploadAdapter.BOX,
