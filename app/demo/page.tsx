@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from 'react';
-import styled, { css } from 'styled-components';
+import React, { useState, useEffect } from 'react';
+import styled, { createGlobalStyle, css } from 'styled-components';
 import {
   BaseConfigs,
   CloudStorageConfigs,
@@ -23,6 +23,16 @@ const ONEDRIVE_CLIENT_ID = 'your_onedrive_client_id';
 const GOOGLE_CLIENT_ID = 'your_google_client_id';
 const GOOGLE_APP_ID = 'your_google_app_id';
 const GOOGLE_API_KEY = 'your_google_api_key';
+
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+  }
+`;
 
 const Container = styled.div`
   display: flex;
@@ -61,24 +71,24 @@ const Sidebar = styled.aside`
 `;
 
 const CheckboxContainer = styled.div`
-  display: flex;
-  flex-direction: column; /* Default to vertical layout */
-  align-items: flex-start; /* Align items to the start for vertical layout */
-  
-  @media (max-width: 768px) {
-    flex-direction: row; /* Switch to horizontal layout on smaller screens */
-    flex-wrap: wrap; /* Allow items to wrap to next line */
-    justify-content: flex-start; /* Align items to the start for horizontal layout */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); // Creates a grid with flexible columns
+  gap: 10px; // Space between grid items
+  margin-top: 10px;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 `;
 
 const CheckboxItem = styled.div`
-  margin-bottom: 10px; /* Space between checkboxes vertically */
+  display: flex;
+  align-items: center; // Vertically align checkbox and label
   
-  @media (max-width: 768px) {
-    flex: 1 0 21%; /* Flex basis of 21% allows for some margin and roughly 4 items per row */
-    margin-bottom: 10px; /* Adjust spacing as needed */
-    margin-right: 10px; /* Space between checkboxes horizontally */
+  @media (min-width: 768px) {
+    margin-bottom: 10px; // Only apply bottom margin on larger screens
   }
 `;
 
@@ -106,7 +116,7 @@ const UploaderContainer = styled.div`
   }
 `;
 
-const Button = styled.button`
+const EnhancedButton = styled.button`
   background-color: #007bff;
   color: white;
   border: none;
@@ -115,10 +125,12 @@ const Button = styled.button`
   cursor: pointer;
   border-radius: 5px;
   font-size: 1em;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 
   &:hover {
     background-color: #0056b3;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   }
 
   ${props => props.disabled && css`
@@ -128,26 +140,41 @@ const Button = styled.button`
 `;
 
 const Title = styled.h1`
-  font-size: 2em;
-  padding: 0 20px; /* Add padding for smaller screens */
+  font-size: 2.5em; /* Increase font size for impact */
+  color: #333; /* Darker text for better contrast */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow for depth */
+  padding: 0 20px;
+  margin-top: 40px; /* Adjust top margin for better spacing */
+  transition: margin-top 0.3s ease-in-out; /* Smooth transition for resizing */
 
   @media (min-width: 768px) {
-    padding: 0; /* Remove padding for larger screens */
+    padding: 0;
+    margin-top: 80px; /* Increase top margin for larger screens */
+    font-size: 3em; /* Larger font size for larger screens */
   }
 `;
 
 const Description = styled.p`
-  font-size: 1em;
-  padding: 0 20px; /* Add padding for smaller screens */
+  font-size: 1.2em; 
+  color: #555; 
+  line-height: 1.6; 
+  max-width: 600px; 
+  text-align: center; 
+  padding: 0 20px;
+  margin-top: 20px; 
+  transition: margin-top 0.3s ease-in-out; 
 
   @media (min-width: 768px) {
-    padding: 0; /* Remove padding for larger screens */
+    padding: 0;
+    text-align: left; 
+   
   }
 `;
+
 const SidebarTitle = styled.h2`
   font-size: 1.5em;
-  margin-bottom: 20px; // Adjust as needed for spacing
-  color: #007bff; // Example color, adjust as needed
+  margin-bottom: 20px; 
+  color: #007bff; 
 `;
 
 // Main page component
@@ -172,6 +199,11 @@ const Page: React.FC = () => {
     Unsplash: false,
     Box: false,
   });
+
+  useEffect(() => {
+    
+  }, [canUpload]);
+
 
   // S3 Configurations
   const s3Configs = {
@@ -230,30 +262,32 @@ const uploadAdapters = [
   }, []),
 ];
 
-  return (
+return (
+  <>
+    <GlobalStyle />
     <Container>
       <Title>Upup File Uploader Demo</Title>
       <Description>
-        This is a demonstration of the UpupUploader. Select the sources you want to enable and then click "Enable Upload".
+        This is a demonstration of the UpUp uploader. Select the sources you want to enable and then click "Enable Upload".
       </Description>
       <ContentContainer>
-      <Sidebar>
-  <SidebarTitle>Remote Sources</SidebarTitle>
-  <CheckboxContainer>
-    {Object.keys(services).map((service) => (
-      <CheckboxItem key={service}>
-        <Label>
-          <StyledCheckbox
-            type="checkbox"
-            checked={services[service as ServiceKeys]}
-            onChange={() => handleServiceChange(service as ServiceKeys)}
-          />{' '}
-          {service}
-        </Label>
-      </CheckboxItem>
-    ))}
-  </CheckboxContainer>
-</Sidebar>
+        <Sidebar>
+          <SidebarTitle>Remote Sources</SidebarTitle>
+          <CheckboxContainer>
+            {Object.keys(services).map((service) => (
+              <CheckboxItem key={service}>
+                <Label>
+                  <StyledCheckbox
+                    type="checkbox"
+                    checked={services[service as keyof typeof services]}
+                    onChange={() => handleServiceChange(service as keyof typeof services)}
+                  />{' '}
+                  {service}
+                </Label>
+              </CheckboxItem>
+            ))}
+          </CheckboxContainer>
+        </Sidebar>
         <UploaderContainer>
           <UpupUploader
             baseConfigs={baseConfigs}
@@ -262,13 +296,14 @@ const uploadAdapters = [
             oneDriveConfigs={oneDriveConfigs}
             uploadAdapters={uploadAdapters}
           />
-          <button onClick={() => setCanUpload(!canUpload)}>
+          <EnhancedButton onClick={() => setCanUpload(!canUpload)}>
             {canUpload ? 'Disable' : 'Enable'} Upload
-          </button>
+          </EnhancedButton>
         </UploaderContainer>
       </ContentContainer>
     </Container>
-  );
+  </>
+);
 };
 
 export default Page;
