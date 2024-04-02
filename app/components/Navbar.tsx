@@ -18,7 +18,7 @@ const Navbar = () => {
         <Link href="/" passHref>
           <span className="cursor-pointer px-4 text-gray-800 hover:text-blue-600 transition-colors duration-200">Home</span>
         </Link>
-        <Link href="/docs" passHref>
+        <Link href="/docs/index.html" passHref>
   <span className="cursor-pointer px-4 text-gray-800 hover:text-blue-600 transition-colors duration-200">Docs</span>
 </Link>
         <Link href="/demo" passHref>
