@@ -116,28 +116,6 @@ const UploaderContainer = styled.div`
   }
 `;
 
-const EnhancedButton = styled.button`
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin-top: 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 1em;
-  transition: background-color 0.3s, box-shadow 0.3s;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-
-  &:hover {
-    background-color: #0056b3;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  }
-
-  ${props => props.disabled && css`
-    background-color: #cccccc;
-    cursor: not-allowed;
-  `}
-`;
 
 const Title = styled.h1`
   font-size: 2.5em; /* Increase font size for impact */
@@ -158,16 +136,23 @@ const Description = styled.p`
   font-size: 1.2em; 
   color: #555; 
   line-height: 1.6; 
-  max-width: 600px; 
+  width: max-content;
   text-align: center; 
   padding: 0 20px;
   margin-top: 20px; 
   transition: margin-top 0.3s ease-in-out; 
 
-  @media (min-width: 768px) {
-    padding: 0;
-    text-align: left; 
-   
+  @media (max-width: 768px) {
+    font-size: 1em; // Reduce font size for smaller screens
+    padding: 0 15px; // Adjust padding for smaller screens
+    text-align: left; // Adjust text alignment if needed
+    max-width: 450px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9em; // Even smaller font size for phone screens
+    padding: 0 20px; // Increase padding for phone screens
+    max-width: 350px;
   }
 `;
 
@@ -192,13 +177,13 @@ type ServicesState = {
 // Main page component
 const Page: React.FC = () => {
   const [canUpload, setCanUpload] = useState(false);
-  const [services, setServices] = useState<ServicesState>({
-    GoogleDrive: false,
-    Dropbox: false,
-    OneDrive: false,
-    Unsplash: false,
-    Box: false,
-  });
+const [services, setServices] = useState<ServicesState>({
+  GoogleDrive: true, // Set to true for default enabled
+  Dropbox: false,
+  OneDrive: true, // Set to true for default enabled
+  Unsplash: false,
+  Box: false,
+});
 
   useEffect(() => {
     
@@ -268,7 +253,7 @@ return (
     <Container>
       <Title>Upup File Uploader Demo</Title>
       <Description>
-        This is a demonstration of the UpUp uploader. Select the sources you want to enable and then click "Enable Upload".
+        This is a demonstration of the UpUp uploader. Select the sources you want to enable and then upload
       </Description>
       <ContentContainer>
         <Sidebar>
@@ -296,9 +281,6 @@ return (
             oneDriveConfigs={oneDriveConfigs}
             uploadAdapters={uploadAdapters}
           />
-          <EnhancedButton onClick={() => setCanUpload(!canUpload)}>
-            {canUpload ? 'Disable' : 'Enable'} Upload
-          </EnhancedButton>
         </UploaderContainer>
       </ContentContainer>
     </Container>

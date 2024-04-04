@@ -27,7 +27,7 @@ export default function RootLayout({
             target="_blank"
             className="hover:underline"
           >
-            Devino Technologies Inc
+            Devino Solutions Inc.
           </a>
         </footer>
       </body>

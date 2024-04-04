@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 
 export default function RocketSVG({ className }: { className?: string }) {
+  const size = "min(40vw, 70vh)"; // This will take the smaller value between 40% of viewport width and 70% of viewport height
   return (
     <motion.svg
       width="429"
@@ -20,6 +21,23 @@ export default function RocketSVG({ className }: { className?: string }) {
         duration: 0.05,
         repeat: Infinity,
         repeatType: "reverse",
+      }}
+      className={className}
+      initial={{ y: "-50%", x: "-50%" }} // Center the SVG
+      animate={{
+        y: "-50%",
+        x: ["-50%", "-50%"], // Keep it centered on the x-axis
+      }}
+      transition={{
+        duration: 0.05,
+        repeat: Infinity,
+        repeatType: "reverse",
+      }}
+      style={{
+        height: size, // Set both the height and width to be responsive
+        width: size,
+        maxWidth: "429px", // Set a maxWidth and maxHeight to make sure it doesn't scale beyond the original size
+        maxHeight: "943px",
       }}
     >
       <g id="Group">
