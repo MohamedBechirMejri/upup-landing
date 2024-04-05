@@ -6,25 +6,25 @@ import Navbar from "./components/Navbar"; // Assuming Navbar is in components fo
 export default function Home() {
   return (
     <>
-      <Navbar />
       <div className="pt-16 md:pt-20"> {/* Adjust padding top value as per the height of your Navbar */}
-        <div className="h-full grid grid-cols-[minmax(0,1fr),50vw] overflow-hidden">
+        <div className="h-full grid grid-cols-1 md:grid-cols-[minmax(0,1fr),50vw] overflow-hidden">
           <TitleAndShit />
-        <div className="overflow-hidden relative bg-gradient-to-tr from-sky-500 via-blue-700 to-blue-950">
-          <div
-            className="size-0"
-            style={{
-              borderLeft: `var(--triangle-width-large) solid transparent`,
-              borderRight: "0 solid transparent",
-              borderBottom: `var(--triangle-height-large) solid white`,
-              transform: "rotateX(180deg) rotateY(180deg)",
-            }}
-          ></div>
-          <RocketSVG className="absolute top-1/2 left-1/2 h-1/2 z-20" />
-          <Particles />
+          {/* Add hidden md:flex to hide this div on screens smaller than 768px */}
+          <div className="overflow-hidden relative bg-gradient-to-tr from-sky-500 via-blue-700 to-blue-950 hidden md:flex">
+            <div
+              className="size-0"
+              style={{
+                borderLeft: `var(--triangle-width-large) solid transparent`,
+                borderRight: "0 solid transparent",
+                borderBottom: `var(--triangle-height-large) solid white`,
+                transform: "rotateX(180deg) rotateY(180deg)",
+              }}
+            ></div>
+            <RocketSVG className="absolute top-1/2 left-1/2 h-1/2 z-20" />
+            <Particles />
+          </div>
         </div>
       </div>
-    </div>
     </>
   );
 }

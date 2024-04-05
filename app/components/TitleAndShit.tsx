@@ -26,36 +26,35 @@ const StyledTitleContainer = styled.div`
   overflow: hidden; // Ensures nothing spills out
   
   @media (max-width: 768px) {
-    padding-top: 7rem; // Less padding on smaller devices if necessary
+    padding: 5rem 1rem; // Increase padding and make sure it's the same on all sides
   }
 
   @media (max-width: 480px) {
-    padding-top: 5rem; // Even less padding on very small devices
+    padding: 3rem 1rem; // Further increase padding for very small devices
   }
 `;
 const StyledTitle = styled(motion.p)`
-  font-size: 12rem; // Starting font size
+  font-size: 9rem; // Starting font size
   line-height: 10rem; // Starting line height
   overflow: hidden;
   width: 100%;
   margin: 0; // Reset margin
 
   // Reduce font size and line height on smaller screens
-  @media (max-width: 1200px) {
-    font-size: 10rem;
-    line-height: 8rem;
-  }
-
   @media (max-width: 768px) {
-    font-size: 7rem;
-    line-height: 5.5rem;
+    font-size: 5rem; // Further reduce font size
+    line-height: 4.5rem;
+    margin-bottom: 1rem; // Add space between titles
   }
 
   @media (max-width: 480px) {
-    font-size: 4rem;
-    line-height: 3rem;
+    font-size: 5rem; // Even smaller font size for very small devices
+    line-height: 5rem;
+    overflow: visible;
+    text-align: center;
   }
 `;
+
 
 const StyledSubtitle = styled(motion.p)`
   font-size: 1.25rem; // Subtitle font size
@@ -63,11 +62,14 @@ const StyledSubtitle = styled(motion.p)`
   margin: 1rem 0; // Spacing around the subtitle
 
   @media (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 1.5rem;
+    margin: 1.5rem 0; // Increase space around the subtitle
   }
 
   @media (max-width: 480px) {
-    font-size: 0.875rem;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 1.5rem 0; // Increase space around the subtitle
   }
 `;
 
@@ -90,12 +92,12 @@ const StyledButton = styled(motion.button)`
 
   @media (max-width: 768px) {
     padding: 0.75rem 1.5rem;
-    font-size: 0.95rem;
+    font-size: 0.9rem; // Slightly reduce font size
   }
 
   @media (max-width: 480px) {
-    padding: 0.5rem 1rem;
-    font-size: 0.875rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem; // Further reduce font size
   }
 `;
 
@@ -119,6 +121,8 @@ export default function TitleAndShit() {
         initial={{ y: '10rem', opacity: 0 }}
         animate={{ y: '0rem', opacity: 1 }}
         transition={{ duration: 1.8, delay: 0.2, ease: "anticipate" }}
+        className=' pl-40 font-extrabold text-transparent bg-clip-text bg-left-top [background-image:url("/text-background-a2ce454e.png");] bg-gradient-to-tl from-sky-500 via-blue-500 to-blue-950'
+        
       >
         and
       </StyledTitle>
@@ -126,6 +130,7 @@ export default function TitleAndShit() {
         initial={{ y: '10rem', opacity: 0 }}
         animate={{ y: '0rem', opacity: 1 }}
         transition={{ duration: 1.8, delay: 0.3, ease: "anticipate" }}
+        className=' pl-60 font-extrabold text-transparent bg-clip-text bg-left-top [background-image:url("/text-background-a2ce454e.png");] bg-gradient-to-tl from-sky-500 via-blue-500 to-blue-950'
       >
         Away
       </StyledTitle>
