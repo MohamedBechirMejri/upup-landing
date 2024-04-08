@@ -11,17 +11,17 @@ export default function RocketSVG({ className }: { className?: string }) {
       viewBox="0 0 429 943"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      initial={{ y: "-50%", x: "-37%" }}
-      animate={{
-        y: "-50%",
-        x: ["-37.3%", "-36.7%"],
-      }}
-      transition={{
-        duration: 0.05,
-        repeat: Infinity,
-        repeatType: "reverse",
-      }}
+      // className={className}
+      // initial={{ y: "-50%", x: "-37%" }}
+      // animate={{
+      //   y: "-50%",
+      //   x: ["-37.3%", "-36.7%"],
+      // }}
+      // transition={{
+      //   duration: 0.05,
+      //   repeat: Infinity,
+      //   repeatType: "reverse",
+      // }}
       className={className}
       initial={{ y: "-50%", x: "-50%" }} // Center the SVG
       animate={{

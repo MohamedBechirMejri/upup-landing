@@ -7,7 +7,7 @@ import {
   CloudStorageConfigs,
   GoogleConfigs,
   OneDriveConfigs,
-  S3Configs, 
+  S3Configs,
   UploadAdapter,
   UpupUploader,
 } from '@bassem97/upup';
@@ -86,7 +86,7 @@ const CheckboxContainer = styled.div`
 const CheckboxItem = styled.div`
   display: flex;
   align-items: center; // Vertically align checkbox and label
-  
+
   @media (min-width: 768px) {
     margin-bottom: 10px; // Only apply bottom margin on larger screens
   }
@@ -133,14 +133,14 @@ const Title = styled.h1`
 `;
 
 const Description = styled.p`
-  font-size: 1.2em; 
-  color: #555; 
-  line-height: 1.6; 
+  font-size: 1.2em;
+  color: #555;
+  line-height: 1.6;
   width: max-content;
-  text-align: center; 
+  text-align: center;
   padding: 0 20px;
-  margin-top: 20px; 
-  transition: margin-top 0.3s ease-in-out; 
+  margin-top: 20px;
+  transition: margin-top 0.3s ease-in-out;
 
   @media (max-width: 768px) {
     font-size: 1em; // Reduce font size for smaller screens
@@ -158,8 +158,8 @@ const Description = styled.p`
 
 const SidebarTitle = styled.h2`
   font-size: 1.5em;
-  margin-bottom: 20px; 
-  color: #007bff; 
+  margin-bottom: 20px;
+  color: #007bff;
 `;
 
 // Main page component
@@ -186,7 +186,7 @@ const [services, setServices] = useState<ServicesState>({
 });
 
   useEffect(() => {
-    
+
   }, [canUpload]);
 
 
@@ -203,7 +203,7 @@ const [services, setServices] = useState<ServicesState>({
   // Uploader Configurations
   const baseConfigs = {
     canUpload: canUpload,
-    setKey: (newKey) => setCanUpload(true), // This should be your logic to handle key changes
+    setKey: () => setCanUpload(true), // This should be your logic to handle key changes
   };
 
   const cloudStorageConfigs = {

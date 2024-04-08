@@ -118,7 +118,7 @@ const DocPage: NextPage = () => {
   <Section id="api-reference">
     <SubHeading>API Reference</SubHeading>
     <Paragraph>
-      Comprehensive reference for UpUp's API, including methods, parameters, and return values.
+      Comprehensive reference for UpUp{"'"}s API, including methods, parameters, and return values.
     </Paragraph>
   </Section>
   <Section id="integrations">
