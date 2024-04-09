@@ -39,3 +39,11 @@ body, html {
     --triangle-height-large: 30vh; /* Even smaller triangle height on small screens */
   }
 }
+
+@media (max-width: 1024px) {
+  .bg-mobile {
+    background-image: url('/soft-blue-color-gradient-background.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+}

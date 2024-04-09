@@ -6,10 +6,9 @@ import Navbar from "./components/Navbar"; // Assuming Navbar is in components fo
 export default function Home() {
   return (
     <>
-      <div className="pt-16 md:pt-20"> {/* Adjust padding top value as per the height of your Navbar */}
+      <div className="pt-16 md:pt-20 bg-mobile"> {/* Adjust padding top value as per the height of your Navbar */}
         <div className="h-full grid grid-cols-1 md:grid-cols-[minmax(0,1fr),50vw] overflow-hidden">
           <TitleAndShit />
-          {/* Add hidden md:flex to hide this div on screens smaller than 768px */}
           <div className="overflow-hidden relative bg-gradient-to-tr from-sky-500 via-blue-700 to-blue-950 hidden md:flex">
             <div
               className="size-0"

@@ -45,6 +45,7 @@ const StyledTitle = styled(motion.p)`
     font-size: 5rem; // Further reduce font size
     line-height: 4.5rem;
     margin-bottom: 1rem; // Add space between titles
+    color: white;
   }
 
   @media (max-width: 480px) {
@@ -52,6 +53,8 @@ const StyledTitle = styled(motion.p)`
     line-height: 5rem;
     overflow: visible;
     text-align: center;
+    color: black;
+    padding: 0%;
   }
 `;
 
@@ -98,6 +101,7 @@ const StyledButton = styled(motion.button)`
   @media (max-width: 480px) {
     padding: 0.6rem 1.2rem;
     font-size: 1rem; // Further reduce font size
+    color: black;
   }
 `;
 
